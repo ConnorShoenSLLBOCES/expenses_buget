@@ -1,0 +1,47 @@
+function main()
+    display "Welcome to the buget planner and expence tracker!"
+    monthly_income = get_monthly_income()
+    expences = empty dictionary
+    
+    loop forever:
+        display menu:
+            1) add an expences
+            2) view buget summary
+            3) quit
+
+        user_choice = read input
+        if user_choice == 1:
+            add_expence(expences)
+        elif user_choice == 2:
+            display_summary(monthly_income, expences)
+        elif user_choice == 3:
+            display "Bye"
+            break
+        else:
+            display "Invalid choice. Try again."
+
+function get_monthly_income():
+    loop forever:
+        monthly_income = read user input
+        if monthly_income is a valid float and is >= 0:
+            return monthly_income
+        else:
+            display "Invalid input. Please enter a valid value.
+
+function add_expence(expences):
+    category = read category input
+    loop forever:
+        amount = read input
+        if amount is a valid float and >= 0:
+            expences[category] = expences.get(category, 0) + amount
+            display "Expence Added"
+            break
+        else:
+            display "Invalid expence amount, try again."
+function display_summary(monthly_income, expences):
+    total_expences = sum of all values in expences
+    remaining_buget = monthly_income - total_expences
+    display monthly_income
+    display each category and amount spent, plus percentage
+    display total_expences
+    display remaining_buget
