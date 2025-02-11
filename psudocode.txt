@@ -38,6 +38,7 @@ function add_expence(expences):
             break
         else:
             display "Invalid expence amount, try again."
+
 function display_summary(monthly_income, expences):
     total_expences = sum of all values in expences
     remaining_buget = monthly_income - total_expences
