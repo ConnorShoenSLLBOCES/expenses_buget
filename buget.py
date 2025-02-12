@@ -46,8 +46,8 @@ def display_summary(monthly_income, expences):
         percentage = (amount / monthly_income) * 100
         print (f"{category}: {amount} ({percentage: .2f}%)")
     remaining_buget = int(monthly_income) - int(total_expences)
-    print (f"Your initial Monthy Income was ${monthly_income}")
-    print (f"Your total expences are ${total_expences: .2f}.")
-    print (f"Your remaining buget is ${remaining_buget: .2f}.")
+    print (f"Your initial Monthy Income was ${monthly_income:.2f}")
+    print (f"Your total expences are ${total_expences: .1f}.")
+    print (f"Your remaining buget is ${remaining_buget: .1f}.")
 
 main()
