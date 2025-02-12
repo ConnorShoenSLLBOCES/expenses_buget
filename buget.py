@@ -22,8 +22,8 @@ def main():
 
 def get_monthly_income():
     while True:
-        monthly_income = input("Enter your monthly income: ")
-        if monthly_income >= "0":
+        monthly_income = int(input("Enter your monthly income: "))
+        if monthly_income >= 0:
             return monthly_income
         else:
             print ("Invalid input. Please enter a valid value.")
@@ -34,7 +34,6 @@ def add_expence(expences):
         amount = int(input("Enter an amount for the category: "))
         if amount >= 0:
             expences[category] = expences.get(category, 0) + amount
-            expences.update(category)
             print ("Expence Added")
             break
         else:
@@ -43,13 +42,12 @@ def add_expence(expences):
 
 def display_summary(monthly_income, expences):
     total_expences = sum(expences.values())
+    for category, amount in expences.items():
+        percentage = (amount / monthly_income) * 100
+        print (f"{category}: {amount} ({percentage: .2f}%)")
     remaining_buget = int(monthly_income) - int(total_expences)
-    print (monthly_income)
-    amount_cat = len(expences)
-    amount_cat /= 2
-    percentage = (expences.values() / amount_cat) * 100
-    print (expences, "(" + str(percentage) + "%)")
-    print (total_expences)
-    print (remaining_buget)
+    print (f"Your initial Monthy Income was ${monthly_income}")
+    print (f"Your total expences are ${total_expences: .2f}.")
+    print (f"Your remaining buget is ${remaining_buget: .2f}.")
 
 main()
